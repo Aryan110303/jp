@@ -23,33 +23,32 @@
 <body>
   <header id="sticky-header">
   <div class="toparea">
-    <div class="container" style="padding: 0 !important; margin: 0 !important; width: 100% !important; max-width: 100% !important;">
+    <div class="container">
       <div class="row align-items-center">
 
         <div class="col-lg-10 col-md-12 col-12">
           <div class="row">
-            <div class="col-lg-2 col-md-12 col-12" style="padding:0% !important">
+            <div class="col-lg-2 col-md-12 col-12">
               <ul class="top-social fleft">
-                <li><a href="https://www.facebook.com/jpacademymeerut.in" target="_blank"><i style="color: blue;" class="fa fa-facebook"></i></a></li>
-                <li><a href="https://www.instagram.com/jpacademymeerut" target="_blank"><i style="color: orange;" class="fa fa-instagram"></i></a></li>
-                <li><a href="https://www.youtube.com/@jpgroupmeerut5994" target="_blank"><i style="color: red;" class="fa fa-youtube"></i></a></li>
+                <li><a href="https://www.facebook.com/jpacademymeerut.in"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
               </ul>
             </div>
             <div class="col-lg-10 col-md-12 col-12">
               <ul class="toplist fleft">
-                 <li><a href="mailto:jp_academy_meerut@yahoo.co.in"><i class="fa fa-envelope-o"></i>jp_academy_meerut@yahoo.co.in</a></li>
+                 <li><a href="mailto:info@jpgroup.in"><i class="fa fa-envelope-o"></i>info@jpgroup.in</a></li>
                  <!-- <li><a href="mailto:shiv.rohitsharma@gmail.com"><i class="fa fa-envelope-o"></i>shiv.rohitsharma@gmail.com</a></li> -->
                  <li><a href=""><i class="fa fa fa-phone"></i>+91-9068999713</a></li> 
                  <li><a href=""><i class="fa fa fa-phone"></i>+91-9068999728 </a></li>
-                 <li><a href="">Affiliation Number: 2130247</a></li>
                  <!-- <li> <a href="http://jpacademymeerut.com/admin/site/teacherlogin" target="_blank">Login Teacher</a></li> 
                  <li> <a href="http://jpacademymeerut.com/admin/site/userlogin" target="_blank">Login Student</a></li>             -->
               </ul>
            </div>
           </div><!--./row-->  
         </div><!--./col-lg-8-->
-        <div class="col-lg-2 col-md-12 col-12" >
-            <a style="margin: 0 20px;" href="admission.php" class="admission-btn light_text">Admission 2024-25</a>
+        <div class="col-lg-2 col-md-12 col-12">
+            <a href="admission.php" class="admission-btn light_text">Admission 2023-24</a>
           
         </div>    
       </div><!--./row-->
@@ -67,7 +66,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto nav-menu navborder navigation">
             <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link dropdown-toggle" href="about.php">About</a>
+            <li class="nav-item"><a class="nav-link" href="about.php">About</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item arrowmenu" href="chairman.php">Message of Chairman</a></li>
                   <li><a class="dropdown-item arrowmenu" href="president.php">Message of President</a></li>
@@ -76,26 +75,6 @@
                  
                 </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdowninfraLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Activities
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdowninfraLink">
-                <li><a class="dropdown-item arrowmenu" href="co-curricular-act.php">Co-curricular</a></li>
-                <li><a class="dropdown-item arrowmenu" href="sports.php">Sports</a></li>
-                <li><a class="dropdown-item arrowmenu" href="events.php">Events</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdowntrainingLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Facilities
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdowntrainingLink">
-                  <li><a class="dropdown-item arrowmenu" href="mess-medical-care.php">Mess & Medical Care</a></li>
-                  <li><a class="dropdown-item arrowmenu" href="residential-block.php">Residential Blocks</a></li>
-                  <li><a class="dropdown-item arrowmenu" href="computertraning.php">Computer Training</a></li>
-                  <li><a class="dropdown-item arrowmenu" href="library.php">Library</a></li>
-                  <li><a class="dropdown-item arrowmenu" href="transport.php">Transport</a></li>
-                </ul>
-              </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academics
                 </a>
@@ -109,8 +88,28 @@
                 </ul>
               </li>
 
-              
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdowninfraLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Activities
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdowninfraLink">
+                  <li><a class="dropdown-item arrowmenu" href="co-curricular-act.php">Co-curricular</a></li>
+                  <li><a class="dropdown-item arrowmenu" href="sports.php">Sports</a></li>
+                  <li><a class="dropdown-item arrowmenu" href="events.php">Events</a></li>
+                </ul>
+              </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdowntrainingLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Facilities
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdowntrainingLink">
+                  <li><a class="dropdown-item arrowmenu" href="mess-medical-care.php">Mess & Medical Care</a></li>
+                  <li><a class="dropdown-item arrowmenu" href="residential-block.php">Residential Blocks</a></li>
+                  <li><a class="dropdown-item arrowmenu" href="computertraning.php">Computer Training</a></li>
+                  <li><a class="dropdown-item arrowmenu" href="library.php">Library</a></li>
+                  <li><a class="dropdown-item arrowmenu" href="transport.php">Transport</a></li>
+                </ul>
+              </li>
             <li class="nav-item"><a class="nav-link" href="affiliation.php">Affiliation</a></li>  
+            <li class="nav-item"><a class="nav-link" href="assignment.php">Assignment</a></li>  
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
           </ul>
         </div>
