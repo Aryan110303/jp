@@ -1,0 +1,310 @@
+[2020-05-02 16:04:46] local.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:326)
+[stacktrace]
+#0 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('SELECT student_...', Array, Object(Closure))
+#1 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('SELECT student_...', Array, Object(Closure))
+#2 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(349): Illuminate\\Database\\Connection->select('SELECT student_...')
+#3 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(237): Illuminate\\Database\\DatabaseManager->__call('select', Array)
+#4 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1153): Illuminate\\Support\\Facades\\Facade::__callStatic('select', Array)
+#5 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1137): App\\Http\\Controllers\\PrincipalapiController->getDueFeeByFeeSessionGroup(82, 7382)
+#6 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(543): App\\Http\\Controllers\\PrincipalapiController->get_student_fees(2281)
+#7 [internal function]: App\\Http\\Controllers\\PrincipalapiController->totalFees(Object(Illuminate\\Http\\Request))
+#8 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#9 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('totalFees', Array)
+#10 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PrincipalapiController), 'totalFees')
+#11 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#12 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#13 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#20 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#21 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#22 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#23 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#24 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#37 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 {main}
+"} 
+[2020-05-02 16:05:51] local.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:326)
+[stacktrace]
+#0 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('SELECT student_...', Array, Object(Closure))
+#1 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('SELECT student_...', Array, Object(Closure))
+#2 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(349): Illuminate\\Database\\Connection->select('SELECT student_...')
+#3 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(237): Illuminate\\Database\\DatabaseManager->__call('select', Array)
+#4 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1153): Illuminate\\Support\\Facades\\Facade::__callStatic('select', Array)
+#5 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1137): App\\Http\\Controllers\\PrincipalapiController->getDueFeeByFeeSessionGroup(82, 7382)
+#6 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(543): App\\Http\\Controllers\\PrincipalapiController->get_student_fees(2281)
+#7 [internal function]: App\\Http\\Controllers\\PrincipalapiController->totalFees(Object(Illuminate\\Http\\Request))
+#8 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#9 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('totalFees', Array)
+#10 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PrincipalapiController), 'totalFees')
+#11 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#12 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#13 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#20 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#21 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#22 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#23 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#24 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#37 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 {main}
+"} 
+[2020-05-02 16:07:51] local.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:326)
+[stacktrace]
+#0 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('SELECT student_...', Array, Object(Closure))
+#1 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('SELECT student_...', Array, Object(Closure))
+#2 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(349): Illuminate\\Database\\Connection->select('SELECT student_...')
+#3 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(237): Illuminate\\Database\\DatabaseManager->__call('select', Array)
+#4 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1153): Illuminate\\Support\\Facades\\Facade::__callStatic('select', Array)
+#5 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1137): App\\Http\\Controllers\\PrincipalapiController->getDueFeeByFeeSessionGroup(82, 7382)
+#6 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(543): App\\Http\\Controllers\\PrincipalapiController->get_student_fees(2281)
+#7 [internal function]: App\\Http\\Controllers\\PrincipalapiController->totalFees(Object(Illuminate\\Http\\Request))
+#8 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#9 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('totalFees', Array)
+#10 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PrincipalapiController), 'totalFees')
+#11 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#12 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#13 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#20 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#21 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#22 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#23 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#24 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#37 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 {main}
+"} 
+[2020-05-02 16:45:30] local.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:326)
+[stacktrace]
+#0 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('SELECT student_...', Array, Object(Closure))
+#1 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('SELECT student_...', Array, Object(Closure))
+#2 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(349): Illuminate\\Database\\Connection->select('SELECT student_...')
+#3 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(237): Illuminate\\Database\\DatabaseManager->__call('select', Array)
+#4 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1153): Illuminate\\Support\\Facades\\Facade::__callStatic('select', Array)
+#5 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1137): App\\Http\\Controllers\\PrincipalapiController->getDueFeeByFeeSessionGroup(82, 7382)
+#6 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(543): App\\Http\\Controllers\\PrincipalapiController->get_student_fees(2281)
+#7 [internal function]: App\\Http\\Controllers\\PrincipalapiController->totalFees(Object(Illuminate\\Http\\Request))
+#8 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#9 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('totalFees', Array)
+#10 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PrincipalapiController), 'totalFees')
+#11 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#12 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#13 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#20 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#21 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#22 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#23 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#24 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#37 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 {main}
+"} 
+[2020-05-02 17:05:15] local.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 (SQL: SELECT student_fees_master.*,fee_groups_feetype.id as `fee_groups_feetype_id`,fee_groups_feetype.amount,fee_groups_feetype.shows,
+        fee_groups_feetype.amount_II,fee_groups_feetype.due_date,fee_groups_feetype.fee_groups_id,student_fees_deposite.receipt_no,fee_groups.name,
+        fee_groups_feetype.feetype_id,feetype.code as type ,feetype.type as code,feetype.description as type2,feetype.fine_apply,
+        FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_groups.id = student_fees_master.fee_session_group_id 
+        INNER JOIN fee_groups_feetype on fee_groups_feetype.fee_session_group_id = fee_session_groups.id 
+        INNER JOIN fee_groups on fee_groups.id=fee_groups_feetype.fee_groups_id
+        INNER JOIN feetype on feetype.id=fee_groups_feetype.feetype_id 
+        WHERE student_fees_master.fee_session_group_id =82 AND student_fees_master.id=7382 order by fee_groups_feetype.due_date asc) at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `student_fees_master`
+        INNER JOIN fee_session_groups on fee_session_' at line 4 at /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php:326)
+[stacktrace]
+#0 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('SELECT student_...', Array, Object(Closure))
+#1 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('SELECT student_...', Array, Object(Closure))
+#2 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(349): Illuminate\\Database\\Connection->select('SELECT student_...')
+#3 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(237): Illuminate\\Database\\DatabaseManager->__call('select', Array)
+#4 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1153): Illuminate\\Support\\Facades\\Facade::__callStatic('select', Array)
+#5 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(1137): App\\Http\\Controllers\\PrincipalapiController->getDueFeeByFeeSessionGroup(82, 7382)
+#6 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/app/Http/Controllers/PrincipalapiController.php(543): App\\Http\\Controllers\\PrincipalapiController->get_student_fees(2281)
+#7 [internal function]: App\\Http\\Controllers\\PrincipalapiController->totalFees(Object(Illuminate\\Http\\Request))
+#8 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#9 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('totalFees', Array)
+#10 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\PrincipalapiController), 'totalFees')
+#11 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#12 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
+#13 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#20 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#21 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#22 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#23 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#24 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(132): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(173): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(107): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#37 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 /home/admin/web/centralacademyjabalpur.com/public_html/principal_laravel/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 {main}
+"} 
